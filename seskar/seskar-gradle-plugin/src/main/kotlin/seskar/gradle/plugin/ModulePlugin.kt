@@ -84,7 +84,7 @@ internal class ModulePlugin : Plugin<Project> {
                 tasks.named<IncrementalSyncTask>(configuration.syncTask) {
                     excludeOriginalSources()
 
-                    from.from(generateTask)
+                    from.from(generateTask.get().destinationDir)
                 }
             }
         }
